@@ -1,3 +1,246 @@
+# REGRAS DE CONTRIBUIÇÃO E CONTINUIDADE DO PROJETO
+
+> LEIA ESTA SEÇÃO ANTES DE ALTERAR QUALQUER ARQUIVO.
+>
+> O UCRT foi estruturado para que uma pessoa ou outra IA consiga assumir o projeto em qualquer momento e entender rapidamente o que foi feito, por que foi feito, o que foi confirmado, o que ainda é hipótese e qual é o próximo passo.
+
+## Regra principal
+
+Nenhuma alteração relevante deve ser feita sem deixar rastreabilidade suficiente para reconstruir a decisão posteriormente.
+
+Cada contribuição deve preservar:
+1. Estado anterior — o que existia antes.
+2. Alteração — exatamente o que mudou.
+3. Motivo — por que mudou.
+4. Próximo estado — o que passou a ser possível ou qual é o próximo passo.
+
+## 1. Antes de alterar
+
+- ler este README;
+- consultar o CHANGELOG.md;
+- consultar a documentação relacionada;
+- verificar a matriz de interfaces quando envolver hardware;
+- verificar o CRT Profile correspondente;
+- procurar decisões anteriores;
+- distinguir fato confirmado, dado documental, medição, hipótese, proposta e pendência.
+
+### Não sobrescrever conhecimento
+
+Uma informação antiga não deve simplesmente desaparecer porque uma nova informação foi encontrada.
+
+Quando uma informação for corrigida:
+- registrar a informação anterior;
+- registrar a nova informação;
+- explicar por que a nova informação é mais confiável;
+- indicar a fonte ou medição;
+- atualizar os documentos afetados.
+
+O Git mostra o que mudou; o CHANGELOG explica o significado da mudança.
+
+## 2. Classificação obrigatória
+
+Sempre que possível, identificar cada dado como:
+
+- CONFIRMADO — validado no hardware real ou em documentação específica e confiável.
+- MEDIDO — obtido por medição, ainda aguardando validação adicional quando necessário.
+- DOCUMENTAL — encontrado em manual, esquema ou documentação.
+- PROVISÓRIO — hipótese tecnicamente plausível, mas ainda não comprovada.
+- DESCONHECIDO — ainda não há informação suficiente.
+- OBSOLETO — informação anterior substituída, mantida para rastreabilidade.
+
+Nunca apresentar hipótese como fato.
+
+## 3. Registro de decisões técnicas
+
+Toda decisão arquitetural importante deve registrar:
+
+**Decisão:** o que foi escolhido.  
+**Motivo:** por que foi escolhido.  
+**Alternativas:** opções consideradas.  
+**Evidência:** documentação, medição, teste ou referência.  
+**Consequência:** o que muda no projeto.  
+**Reversibilidade:** fácil, moderada ou difícil de alterar.
+
+Exemplo:
+
+> Decisão: manter o estágio horizontal original na UCRT v0.1.
+>
+> Motivo: ainda não foram caracterizados completamente yoke, B+, flyback e drive horizontal do aparelho real.
+>
+> Consequência: a primeira placa pode ser desenvolvida em baixa tensão sem assumir prematuramente o estágio de potência.
+>
+> Revisão: poderá ser alterada após caracterização física.
+
+## 4. CHANGELOG
+
+Toda alteração relevante deve atualizar o CHANGELOG.md.
+
+O registro deve responder:
+- O que mudou?
+- Por que mudou?
+- Qual evidência levou à mudança?
+- Quais arquivos foram afetados?
+- Qual é o impacto?
+- Qual é o próximo passo?
+
+Formato recomendado:
+
+### vX.Y.Z — Título curto
+
+**Data:** AAAA-MM-DD
+
+**Alterado**
+- ...
+
+**Motivo**
+- ...
+
+**Evidência / origem**
+- ...
+
+**Impacto**
+- ...
+
+**Pendências geradas ou resolvidas**
+- ...
+
+**Próximo passo**
+- ...
+
+### Versionamento
+
+- MAJOR: mudança incompatível ou fundamental da arquitetura.
+- MINOR: nova função, módulo ou etapa importante.
+- PATCH: correção documental, correção pequena ou ajuste sem mudança estrutural.
+
+## 5. Commits
+
+Os commits devem ser pequenos e semanticamente claros.
+
+Preferir:
+- docs: document HPS-2073A RGB interface
+- hardware: add UCRT core schematic
+- firmware: add sync timing prototype
+- fix: correct vertical interface documentation
+- research: record 34BI service-manual finding
+
+Evitar:
+- update
+- changes
+- test
+- final
+- new
+- fix stuff
+
+Quando uma alteração tiver impacto técnico relevante, o commit deve corresponder ao registro no CHANGELOG.
+
+## 6. Não misturar descoberta com confirmação
+
+Hipótese ≠ projeto aprovado ≠ dado confirmado.
+
+Exemplo:
+
+TDA9570H → HOUT → horizontal
+
+pode estar DOCUMENTAL enquanto o sinal não tiver sido confirmado na unidade física.
+
+Somente após validação deve passar para CONFIRMADO.
+
+## 7. Hardware
+
+Nenhum componente, pinout, tensão, frequência, impedância ou waveform deve ser tratado como definitivo sem registrar sua origem.
+
+Para hardware real, registrar quando possível:
+- aparelho;
+- revisão da PCB;
+- componente;
+- ponto/sinal;
+- instrumento;
+- condição da medição;
+- valor;
+- unidade;
+- data;
+- observação;
+- fotografia ou referência documental.
+
+## 8. Quando uma nova IA assumir o projeto
+
+A ordem recomendada é:
+1. README.md
+2. CHANGELOG.md
+3. docs/Development_Roadmap.md
+4. docs/UCRT_Architecture_v0.1.md
+5. docs/HPS-2073A_34BI_Profile.md
+6. docs/Interface_Matrix_v0.1.md
+7. documentação específica da tarefa
+8. histórico/commits relacionados
+
+Antes de propor solução, procurar se aquela decisão já foi tomada.
+
+Antes de alterar decisão anterior, explicar:
+- qual informação nova apareceu;
+- qual decisão anterior está sendo afetada;
+- por que a evidência justifica a mudança;
+- quais arquivos precisam ser atualizados.
+
+## 9. Regra de continuidade
+
+Ao terminar uma etapa, deixar registrado:
+
+**Estado atual:** onde o projeto está.  
+**O que foi comprovado:** fatos novos.  
+**O que permanece desconhecido:** lacunas.  
+**O que foi decidido:** decisões vigentes.  
+**O que não deve ser feito ainda:** etapas bloqueadas.  
+**Próximo passo:** ação concreta mais próxima.
+
+## 10. Histórico nunca deve ser apagado para "limpar" o projeto
+
+Não apagar decisões, medições ou descobertas antigas apenas porque foram substituídas.
+
+Quando necessário, marcar como OBSOLETO e explicar a substituição.
+
+O repositório deve funcionar também como um caderno de engenharia auditável, permitindo reconstruir a evolução do UCRT.
+
+## 11. Arquivos gerados
+
+Esquemas, PCBs, firmware, scripts, tabelas e diagramas devem:
+- possuir nome claro;
+- indicar versão quando necessário;
+- permanecer no módulo correto;
+- não substituir silenciosamente uma versão anterior;
+- ter sua finalidade documentada;
+- gerar registro no CHANGELOG quando representarem mudança relevante.
+
+## 12. Segurança
+
+Em qualquer alteração envolvendo CRT, alta tensão, deflexão, flyback, fonte ou neck board:
+- não assumir valores;
+- não transformar documentação genérica em pinout confirmado;
+- registrar incertezas;
+- separar desenvolvimento de baixa tensão de testes energizados;
+- preservar as informações de segurança;
+- não remover restrição de segurança sem justificativa técnica.
+
+## 13. Checklist antes de finalizar
+
+- [ ] Li o README.
+- [ ] Consultei o CHANGELOG.
+- [ ] Verifiquei decisões anteriores.
+- [ ] Separei fatos de hipóteses.
+- [ ] Registrei a origem dos novos dados.
+- [ ] Atualizei os documentos afetados.
+- [ ] Atualizei o CHANGELOG quando necessário.
+- [ ] Usei mensagem de commit clara.
+- [ ] Registrei o estado final.
+- [ ] Registrei o próximo passo.
+- [ ] Não apaguei histórico importante.
+- [ ] Não marquei como confirmado algo não validado.
+
+**Objetivo final:** qualquer pessoa ou IA deve conseguir abrir o repositório e, em poucos minutos, entender onde o UCRT está, como chegou até ali, quais decisões foram tomadas, quais evidências sustentam essas decisões, o que ainda falta descobrir e qual é o próximo passo recomendado.
+
+---
+
 # UCRT — Universal CRT Controller
 
 **Versão atual: v0.1.1**  

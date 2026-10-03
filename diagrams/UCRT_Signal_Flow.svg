@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<rect width="1000" height="500" fill="white"/>
+<g font-family="Arial" fill="black" stroke="black">
+<text x="500" y="42" text-anchor="middle" font-size="27" font-weight="bold" stroke="none">UCRT — Fluxo de Sinais v0.1</text>
+<rect x="50" y="160" width="180" height="90" fill="white" stroke-width="2"/>
+<text x="140" y="198" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">ENTRADA</text>
+<text x="140" y="225" text-anchor="middle" font-size="14" stroke="none">Vídeo / Sync</text>
+<rect x="300" y="125" width="230" height="160" fill="white" stroke-width="3"/>
+<text x="415" y="170" text-anchor="middle" font-size="21" font-weight="bold" stroke="none">UCRT CORE</text>
+<text x="415" y="202" text-anchor="middle" font-size="14" stroke="none">processamento</text>
+<text x="415" y="228" text-anchor="middle" font-size="14" stroke="none">OSD / controle</text>
+<text x="415" y="254" text-anchor="middle" font-size="14" stroke="none">geometria</text>
+<rect x="620" y="80" width="170" height="90" fill="white" stroke-width="2"/>
+<text x="705" y="118" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">RGB</text>
+<text x="705" y="145" text-anchor="middle" font-size="13" stroke="none">neck board</text>
+<rect x="620" y="215" width="170" height="90" fill="white" stroke-width="2"/>
+<text x="705" y="253" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">V / H</text>
+<text x="705" y="280" text-anchor="middle" font-size="13" stroke="none">deflexão original</text>
+<rect x="860" y="150" width="100" height="100" fill="white" stroke-width="2"/>
+<text x="910" y="190" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">CRT</text>
+<text x="910" y="218" text-anchor="middle" font-size="13" stroke="none">20"</text>
+<line x1="230" y1="205" x2="300" y2="205" stroke-width="3"/>
+<line x1="530" y1="175" x2="620" y2="125" stroke-width="3"/>
+<line x1="530" y1="240" x2="620" y2="260" stroke-width="3"/>
+<line x1="790" y1="125" x2="860" y2="175" stroke-width="3"/>
+<line x1="790" y1="260" x2="860" y2="220" stroke-width="3"/>
+<text x="500" y="390" text-anchor="middle" font-size="15" stroke="none">V0.1: HV e deflexão permanecem na eletrônica original.</text>
+<text x="500" y="420" text-anchor="middle" font-size="13" stroke="none">Interfaces elétricas definitivas serão validadas por documentação e medições.</text>
+</g></svg>

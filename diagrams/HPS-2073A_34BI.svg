@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="white"/>
+<g font-family="Arial" fill="black" stroke="black">
+<text x="500" y="40" text-anchor="middle" font-size="26" font-weight="bold" stroke="none">CCE HPS-2073A — Chassis 34BI</text>
+<text x="500" y="68" text-anchor="middle" font-size="15" stroke="none">Diagrama funcional simplificado — UCRT v0.1</text>
+<rect x="50" y="130" width="220" height="100" fill="white" stroke-width="2"/>
+<text x="160" y="170" text-anchor="middle" font-size="19" font-weight="bold" stroke="none">ENTRADAS</text>
+<text x="160" y="200" text-anchor="middle" font-size="14" stroke="none">RF / AV / Vídeo</text>
+<rect x="370" y="110" width="260" height="140" fill="white" stroke-width="3"/>
+<text x="500" y="150" text-anchor="middle" font-size="22" font-weight="bold" stroke="none">TDA9570H</text>
+<text x="500" y="180" text-anchor="middle" font-size="15" stroke="none">Vídeo / Sync / OSD</text>
+<text x="500" y="205" text-anchor="middle" font-size="15" stroke="none">Microcontrolador / Controle</text>
+<rect x="730" y="100" width="210" height="95" fill="white" stroke-width="2"/>
+<text x="835" y="138" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">NECK BOARD</text>
+<text x="835" y="165" text-anchor="middle" font-size="14" stroke="none">RGB / KR KG KB</text>
+<rect x="730" y="270" width="210" height="95" fill="white" stroke-width="2"/>
+<text x="835" y="308" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">DEFLEXÃO</text>
+<text x="835" y="335" text-anchor="middle" font-size="14" stroke="none">Horizontal / Vertical</text>
+<rect x="730" y="440" width="210" height="80" fill="white" stroke-width="2"/>
+<text x="835" y="475" text-anchor="middle" font-size="18" font-weight="bold" stroke="none">FLYBACK / HV</text>
+<text x="835" y="500" text-anchor="middle" font-size="13" stroke="none">original na v0.1</text>
+<rect x="370" y="420" width="260" height="90" fill="white" stroke-width="2"/>
+<text x="500" y="455" text-anchor="middle" font-size="19" font-weight="bold" stroke="none">CRT 20"</text>
+<text x="500" y="482" text-anchor="middle" font-size="14" stroke="none">Imagem</text>
+<line x1="270" y1="180" x2="370" y2="180" stroke-width="3"/>
+<line x1="630" y1="150" x2="730" y2="145" stroke-width="3"/>
+<line x1="630" y1="210" x2="730" y2="315" stroke-width="3"/>
+<line x1="835" y1="365" x2="835" y2="440" stroke-width="3"/>
+<line x1="730" y1="480" x2="630" y2="465" stroke-width="3"/>
+<line x1="730" y1="315" x2="630" y2="420" stroke-width="3"/>
+<rect x="40" y="545" width="900" height="35" fill="none" stroke-width="1" stroke-dasharray="7 5"/>
+<text x="490" y="568" text-anchor="middle" font-size="13" stroke="none">Pinagem, tensões e formas de onda devem ser confirmadas na unidade física.</text>
+</g></svg>

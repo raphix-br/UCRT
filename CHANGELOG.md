@@ -1,16 +1,24 @@
-# Changelog
+# CHANGELOG — UCRT
+
+## v0.1.1 — Consolidação inicial
+
+- README principal expandido para consolidar o conhecimento acumulado.
+- Estrutura futura do repositório definida.
+- Estratégia de desenvolvimento incremental documentada.
+- Estado atual do HPS-2073A / 34BI consolidado.
+- Componentes identificados registrados.
+- Parâmetros de geometria registrados.
+- Dados documentais separados de dados ainda não confirmados fisicamente.
+- Estrutura preparada para hardware, firmware e referências.
 
 ## v0.1.0 — Arquitetura inicial
 
-- Criado o projeto UCRT (Universal CRT Controller).
-- Definida arquitetura modular para controlador CRT.
-- Selecionado o CCE HPS-2073A / chassis 34BI como **CRT Profile #001**.
-- Definida a estratégia inicial de reutilização da eletrônica original.
-- Documentado o limite de escopo do UCRT v0.1.
-- Adicionados diagramas SVG iniciais.
-- Registrada a necessidade de confirmar na unidade física as interfaces e valores dependentes da revisão da placa.
-- Definido roadmap para futura substituição modular dos estágios vertical e horizontal.
+- Repositório UCRT criado.
+- Arquitetura modular inicial definida.
+- HPS-2073A / 34BI escolhido como CRT Profile #001.
+- Estratégia de manter HV e deflexão originais definida.
+- Documentação inicial de arquitetura, segurança e roadmap criada.
+- Diagramas SVG adicionados.
 
 ### Regra de versionamento
-
-Toda mudança funcional ou estrutural relevante deve incrementar a versão e registrar no changelog exatamente o que foi alterado.
+Alterações estruturais ou funcionais relevantes devem incrementar a versão e registrar exatamente o que foi modificado.

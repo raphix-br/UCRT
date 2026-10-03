@@ -5,6 +5,7 @@
 - Fabricante: CCE
 - Modelo: HPS-2073A
 - Família/chassis: 34BI
+- Estado da identificação do chassis: **CONFIRMADO pelo usuário na unidade física**
 - CRT: 20"
 - Perfil UCRT: #001
 
